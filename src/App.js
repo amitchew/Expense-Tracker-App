@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import ExpenseItems from "./components/ExpenseItem.js";
+import expenses from "./expenses";
+import './components/Expenses.css'
+import Card from "./components/Card";
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Card className="expenses">
+      <ExpenseItems
+        title={expenses[0].title}
+        amount={expenses[0].amount}
+        date={expenses[0].date}
+      />
+      <ExpenseItems
+        title={expenses[1].title}
+        amount={expenses[1].amount}
+        date={expenses[1].date}
+      />
+    </Card>
   );
 }
 
